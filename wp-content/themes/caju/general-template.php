@@ -3,9 +3,6 @@
 Template name: General Template
 
 */
-?>
-
-<?php
 
 get_header();
 
@@ -45,3 +42,5 @@ get_header();
 <?php
 
 wp_footer();
+
+?>
