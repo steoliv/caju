@@ -89,7 +89,8 @@ define( 'WP_DEBUG', false );
 
 /* Add any custom values between this line and the "stop editing" line. */
 
-
+//Metodo de atualização do wordpress
+define( 'FS_METHOD', 'direct');
 
 /* That's all, stop editing! Happy publishing. */
 
