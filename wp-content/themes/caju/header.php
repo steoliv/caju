@@ -21,7 +21,7 @@
                     </a>
               </div>
               <div class="col-md-9 col-sm-12 menu" style="text-align: right;">
-                    <?php wp_nav_menu( array( 'header-menu' => 'header-menu' )); ?>
+                    <?php wp_nav_menu( array( 'theme_location' => 'header-menu', 'depth' => 3 )); ?>
               </div>
             </div>
         </div>
