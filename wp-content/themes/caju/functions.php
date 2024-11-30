@@ -1,11 +1,5 @@
 <?php
 
-
-  function add_Main_Nav() {
-    register_nav_menu('header-menu',__( 'Header Menu' ));
-  }
-  add_action( 'init', 'add_Main_Nav' );
-
   // Função para carregar folhas de estilo
   function caju_load_scripts(){
     wp_enqueue_style( 'caju-style', get_stylesheet_uri(), array(),'1.0','all');
@@ -14,3 +8,12 @@
   }
   add_action('wp_enqueue_scripts', 'caju_load_scripts');
 
+
+  // Função para registrar menu
+  register_nav_menus(
+    array(
+      'header-menu' => 'Header Menu',
+      'footer-menu' => 'Footer Menu'
+      )
+  );
+  
