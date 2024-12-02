@@ -4,11 +4,17 @@ get_header();
 
 ?>
 
+<div class="container-fluid banner-header">
+    <img src="<?php  header_image()?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="">
+</div>
 
-<section class="blog-home">
-    <div class="container">
-        <div class="row">
-            <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+
+<div class="container-fluid">
+
+    <section class="blog-home">
+        <div class="container">
+            <div class="row">
+                <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
                 <article class="article-loop col-md-3">
                     <header>
                         <h2>
@@ -26,15 +32,18 @@ get_header();
                         <?php the_excerpt(); ?>
                     </div>
                 </article>
-            <?php endwhile; else : ?>
-                <article>
-                    <p>Sorry, no posts were found!</p>
-                </article>
-        <?php endif; ?>
-                
+                <?php endwhile; else : ?>
+                    <article>
+                        <p>Sorry, no posts were found!</p>
+                    </article>
+                    <?php endif; ?>
+                    
+            </div>
         </div>
-    </div>
-</section>
-
-<?php
+    </section>
+</div>
+        
+        <?php
 wp_footer();
+
+?>
