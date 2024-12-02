@@ -29,9 +29,13 @@
                   <?php } ?>
 
               </div>
-              <div class="col-md-9 col-sm-12 menu" style="text-align: right;">
+              <div class="col-md-8 col-sm-12 menu" style="text-align: right;">
                     <?php wp_nav_menu( array( 'theme_location' => 'header-menu', 'depth' => 3 )); ?>
               </div>
+              <div class="col-md-2 col-sm-12  search">
+                    <?php get_search_form() ?>
+              </div>
+
             </div>
         </div>
     </div>
