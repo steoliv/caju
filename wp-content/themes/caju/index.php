@@ -25,7 +25,7 @@ get_header();
                                         </a>
                                     </h2>
                                     <div class="article-img">
-                                        <a href="the_permalink();">
+                                        <a href="<?php the_permalink(); ?>">
                                             <?php the_post_thumbnail( 'medium'); ?>
                                         </a>
                                     </div>
