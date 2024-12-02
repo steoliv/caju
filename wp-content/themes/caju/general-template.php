@@ -9,6 +9,9 @@ get_header();
 ?>
 
 <main class="main">
+<div class="container-fluid banner-header">
+    <img src="<?php  header_image()?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="">
+</div>
 
     <section class="general-template">
         <div class="container">
