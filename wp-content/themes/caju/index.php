@@ -22,6 +22,9 @@ get_header();
                                 <?php the_title(); ?>
                             </a>
                         </h2>
+                        <div class="article-img">
+                            <?php the_post_thumbnail( 'medium'); ?>
+                        </div>
                         <div class="article-info">
                             <p> Postado em <?php echo get_the_date(); ?>  por <?php echo get_the_author_posts_link(); ?></p>
                             <p> Categories: <?php the_category( '' ); ?></p>
