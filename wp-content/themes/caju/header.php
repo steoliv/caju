@@ -16,9 +16,18 @@
         <div class="container">
             <div class="row">
               <div class="col-md-2 col-sm-12  logo">
-                    <a href="/">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="Site Logo" width="50px" height="50px">
-                    </a>
+
+                  <?php if(has_custom_logo()){
+                    the_custom_logo(); 
+                  }else{
+                    ?>
+                    <a href="<?php  echo home_url('/'); ?>">
+                      <span><?php bloginfo('name');?>
+                    </span>  
+                  </a>
+                    
+                  <?php } ?>
+
               </div>
               <div class="col-md-9 col-sm-12 menu" style="text-align: right;">
                     <?php wp_nav_menu( array( 'theme_location' => 'header-menu', 'depth' => 3 )); ?>
