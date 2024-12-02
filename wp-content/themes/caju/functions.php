@@ -16,4 +16,13 @@
       'footer-menu' => 'Footer Menu'
       )
   );
+
+  function caju_config(){
+    $args = array(
+      'height' => 350,
+      'width' => 1920
+    );
+    add_theme_support( 'custom-header', $args);
+  };
+  add_action( 'after_setup_theme', 'caju_config', 0);
   
