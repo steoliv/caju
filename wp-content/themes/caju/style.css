@@ -10,3 +10,82 @@ Version: 1.0
 Text domain.
 
 */
+
+
+* {
+    box-sizing: border-box;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+body {
+    font-family: Helvetica;
+}
+  
+.header {
+    background-color: white;
+
+    ul {
+        list-style: none;
+        min-height: 70px;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        
+        li {
+            display: flex;
+            align-items: center;
+
+            a {
+                color: #ff4700f0;
+                text-decoration: none;
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+
+.init-home {
+    border-radius: 9% 9% 0px 0px;
+    min-height: 500px;
+
+    .wp-block-image {
+        
+        img:first-child {
+            width: 100%!important;
+        }
+    }
+}
+
+.blog-home {
+    text-align: center;
+
+    .blog-list{
+
+        .container {
+            display: grid;
+            grid-template-areas: 'feat-iten feat-iten feat-iten';
+            grid-gap: 25px;
+
+        article:first-child {
+                grid-area: feat-iten;
+            }
+        }
+    }
+
+    a{
+        text-decoration: none
+    }
+}
+
+
+@media only screen and (max-width: 500px){
+    .blog-home .blog-list .container {
+        grid-template-areas: 'feat-iten';
+    }
+}
+
