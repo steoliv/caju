@@ -82,6 +82,10 @@ body {
     }
 }
 
+p.comment-form-comment {
+    display: flex;
+    flex-direction: column;
+}
 
 @media only screen and (max-width: 500px){
     .blog-home .blog-list .container {

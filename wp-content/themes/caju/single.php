@@ -25,6 +25,15 @@
                         </div>
                     </article>
                     <?php endwhile; ?>
+
+
+                    <div class="comments">
+
+                    <?php if(comments_open()){
+                        comments_template();
+                    }
+                    ?>
+                    </div>
             </div>
         </div>
 
