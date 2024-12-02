@@ -44,6 +44,10 @@ get_header();
             </div>
         </div>
     </section>
+
+    <section class="sidebar-blog">
+        <?php echo get_sidebar(); ?>
+    </section>
 </div>
         
         <?php
