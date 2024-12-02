@@ -34,5 +34,12 @@
                         </div>
                     </article>
                     <?php endwhile; ?>
+
+
+                    <div class="paginacao">
+                        <div class="pages new">
+                            <?php echo paginate_links(); ?>
+                        </div>
+                    </div>
             </div>
         </div>

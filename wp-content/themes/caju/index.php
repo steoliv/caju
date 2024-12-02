@@ -39,7 +39,15 @@ get_header();
                                     <?php the_excerpt(); ?>
                                 </div>
                             </article>
-                        <?php endwhile; else : ?>
+                        <?php endwhile; ?>
+                        
+                        <div class="paginacao">
+                            <div class="pages new">
+                                <?php echo paginate_links(); ?>
+                            </div>
+                        </div>
+                        
+                        <?php else : ?>
                                 <article>
                                     <p>Sorry, no posts were found!</p>
                                 </article>

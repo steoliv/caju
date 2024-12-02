@@ -24,6 +24,16 @@
 
                         </div>
                     </article>
+
+                    <div class="paginacao-single">
+                        <div class="pages previous">
+                            <?php previous_post_link(); ?>
+                        </div>
+                        <div class="pages next">
+                            <?php next_post_link(); ?>
+                        </div>
+
+                    </div>
                     <?php endwhile; ?>
 
 
