@@ -3,7 +3,8 @@
     <div class="main">
             <div class="container-fluid search">
                     <div class="container"> 
-
+                        
+                    <h2> Busca por: <?php echo get_search_query(); ?></h2>
                     <?php 
                         while (have_posts()) : the_post(); 
                     ?>
@@ -18,12 +19,13 @@
                                 <?php the_post_thumbnail( 'medium'); ?>
 
                             </div>
-                            <div class="meta-info">
-                                <p> Postado em <?php echo get_the_date(); ?>  por <?php echo get_the_author_posts_link(); ?></p>
-                                <p> Categories: <?php the_category( '' ); ?></p>
-                                <p> Tags: <?php the_tags( '', ', '); ?></p>
-                            </div>
-
+                            <?php if( 'post' == get_post_type()): ?>
+                                <div class="meta-info">
+                                    <p> Postado em <?php echo get_the_date(); ?>  por <?php echo get_the_author_posts_link(); ?></p>
+                                    <p> Categories: <?php the_category( '' ); ?></p>
+                                    <p> Tags: <?php the_tags( '', ', '); ?></p>
+                                </div>
+                            <?php endif; ?>
                         </header>
 
                         <div class="content">
