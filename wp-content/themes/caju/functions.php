@@ -1,5 +1,8 @@
 <?php
 
+  //Carregar arquivo customizer.php com as funções para personalização extras
+    require get_template_directory() . '/inc/customizer.php';
+
   // Função para carregar folhas de estilo
   function caju_load_scripts(){
     wp_enqueue_style( 'caju-style', get_stylesheet_uri(), array(),'1.0','all');
