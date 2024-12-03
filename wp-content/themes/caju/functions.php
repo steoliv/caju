@@ -17,6 +17,8 @@
       )
   );
 
+
+  
   function caju_config(){
     $args = array(
       'height' => 350,
@@ -30,10 +32,13 @@
       'flex-height' => true,
       'flex-width' => true
     ));
+    add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption', 'style','script'));
+    add_theme_support( 'title-tag');
+ 
   };
   add_action( 'after_setup_theme', 'caju_config', 0);
   
-
+//Função que cria  Sidebar
   add_action('widgets_init', 'caju_sidebars' );
   function caju_sidebars(){
     register_sidebar(
@@ -47,4 +52,12 @@
         'after_title' => '</h4>'
         )
     );
+  }
+
+
+  //Deixar tema compativel com versões anteriores do Wordpress
+  if( ! function_exists( 'wp_body_open')){
+    function wp_body_open() {
+      do_action( 'wp_body_open' );
+    }
   }

@@ -11,6 +11,10 @@
 </head>
 
 <body <?php body_class(); ?>>
+ //verificação condicional pode torná-lo compatível com versões mais antigas do WordPress.
+<?php if ( function_exists( 'wp_body_open' ) ):
+  wp_body_open();
+endif ?>
 
 <div class="container-fluid  header ">
         <div class="container">
