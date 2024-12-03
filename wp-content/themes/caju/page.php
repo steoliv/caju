@@ -12,19 +12,11 @@ get_header();
     <section class="page-template">
         <div class="container">
             <div class="row">
-                <?php while ( have_posts() ) : the_post(); ?>
-                    <article class="page-template-loop col-md-12">
-                        <header>
-                            <h1>
-                                    <?php the_title(); ?>
-                            </h1>
-                            </div>
-                        </header>
-                        <div class="page-template-content">
-                            <?php the_content(); ?>
-                        </div>
-                    </article>
-                <?php endwhile;?>
+                <?php while ( have_posts() ) : the_post(); 
+                
+                    get_template_part('parts/content', 'page');
+                
+                endwhile;?>
             </div>
         </div>
     </section>

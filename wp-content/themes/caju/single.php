@@ -8,32 +8,21 @@
 
                     <?php 
                         while (have_posts()) : the_post(); 
+
+                        get_template_part('parts/content', 'single');
+
                     ?>
-                    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-                        <header>
-                            <h1><?php the_title(); ?></h1>
-                            <div class="meta-info">
-                                <p> Postado em <?php echo get_the_date(); ?>  por <?php echo get_the_author_posts_link(); ?></p>
-                                <p> Categories: <?php the_category( '' ); ?></p>
-                                <p> Tags: <?php the_tags( '', ', '); ?></p>
+                    
+
+                        <div class="paginacao-single">
+                            <div class="pages previous">
+                                <?php previous_post_link(); ?>
                             </div>
-                        </header>
-
-                        <div class="content">
-                            <?php the_content(); ?>
+                            <div class="pages next">
+                                <?php next_post_link(); ?>
+                            </div>
 
                         </div>
-                    </article>
-
-                    <div class="paginacao-single">
-                        <div class="pages previous">
-                            <?php previous_post_link(); ?>
-                        </div>
-                        <div class="pages next">
-                            <?php next_post_link(); ?>
-                        </div>
-
-                    </div>
                     <?php endwhile; ?>
 
 
