@@ -16,28 +16,39 @@
 
 <div class="container-fluid  header ">
         <div class="container">
-            <div class="row">
-              <div class="col-md-2 col-sm-12  logo">
-
-                  <?php if(has_custom_logo()){
-                    the_custom_logo(); 
-                  }else{
-                    ?>
-                    <a href="<?php  echo home_url('/'); ?>">
-                      <span><?php bloginfo('name');?>
-                    </span>  
-                  </a>
-                    
-                  <?php } ?>
-
+            <section class="top-bar">
+                <div class="row">
+                    <div class="logo col-4">
+                        <?php 
+                        if( has_custom_logo() ){
+                            the_custom_logo();
+                        }else{
+                            ?>
+                                <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><span><?php bloginfo( 'name' ); ?></span></a>
+                            <?php
+                        }
+                        ?>
+                    </div>
+                    <div class="searchbox col-8">
+                        <?php get_search_form(); ?>
+                    </div>                    
               </div>
-              <div class="col-md-8 col-sm-12 menu" style="text-align: right;">
-                    <?php wp_nav_menu( array( 'theme_location' => 'header-menu', 'depth' => 3 )); ?>
+            </section>
+          </div>
+          </div>
+            <section class="menu-area">
+              <div class="container">
+                  <nav class="main-menu">
+                      <button class="check-button">
+                          <div class="menu-icon">
+                              <div class="bar1"></div>
+                              <div class="bar2"></div>
+                              <div class="bar3"></div>
+                          </div>
+                      </button>
+                      <?php wp_nav_menu( array( 'theme_location' => 'header-menu', 'depth' => 2 )); ?>
+                  </nav>                    
               </div>
-              <div class="col-md-2 col-sm-12  search">
-                    <?php get_search_form() ?>
-              </div>
-
-            </div>
-        </div>
+            </section>
+          </div>
     </div>
