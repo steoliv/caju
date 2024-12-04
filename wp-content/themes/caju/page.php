@@ -21,6 +21,7 @@ $hero_background = wp_get_attachment_url( get_theme_mod( 'set_hero_background'))
 
 <main class="main">
     <div class="container-fluid page-template">
+        <?php if($hero_background): ?>
         <section class="page-hero" style="background-image: url('<?php echo $hero_background ?>');">
             <div class="overlay" style="min-height:<?php echo $hero_height ?>px">
                 <div class="container">
@@ -31,8 +32,8 @@ $hero_background = wp_get_attachment_url( get_theme_mod( 'set_hero_background'))
                     </div>
                 </div>
             </div>
-
         </section>
+        <?php endif;?>
     </div>
     <section class="content-page">
         <div class="container">
