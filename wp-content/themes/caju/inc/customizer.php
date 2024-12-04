@@ -5,7 +5,7 @@ function caju_customizer( $wp_customize ) {
     $wp_customize->add_section(
         'sec_hero',
         array(
-            'title' => 'Hero Section',
+            'title' => 'Hero Section'
         )
     );
 
@@ -14,8 +14,8 @@ function caju_customizer( $wp_customize ) {
         'set_hero_title',
         array(
             'type' => 'theme_mod',
-            'default' => 'Please, add some title',
-            'sanitize_callback' => 'santize_text_field'
+            'default' => 'Por Favor, insira um título',
+            'sanitize_callback' => 'sanitize_text_field'
         )
     );
 
@@ -34,8 +34,8 @@ function caju_customizer( $wp_customize ) {
         'set_hero_subtitle',
         array(
             'type' => 'theme_mod',
-            'default' => 'Please, add some subtitle',
-            'sanitize_callback' => 'sanitize_texarea_field'
+            'default' => 'Por favor, digite seu subtitle',
+            'sanitize_callback' => 'sanitize_textarea_field'
         )
     );
 
@@ -43,7 +43,7 @@ function caju_customizer( $wp_customize ) {
         'set_hero_subtitle',
         array(
             'label' => 'Hero Subtitle',
-            'description' => 'Por favor, insira um subtitle',
+            'description' => 'Por favor, insira um subtitle aqui',
             'section' => 'sec_hero',
             'type' => 'textarea'
         )
@@ -55,7 +55,7 @@ function caju_customizer( $wp_customize ) {
         'set_hero_button',
         array(
             'type' => 'theme_mod',
-            'default' => 'Please, add some button',
+            'default' => 'Por favor, digite o texto para o botão',
             'sanitize_callback' => 'sanitize_text_field'
         )
     );
@@ -63,27 +63,27 @@ function caju_customizer( $wp_customize ) {
         'set_hero_button',
         array(
             'lebel' => 'Button',
-            'description' => 'Por favor, insira o nome do  botão',
+            'description' => 'Por favor, insira o nome do botão',
             'section' => 'sec_hero',
             'type' => 'text'
         )
     );
 
-    //Link
+    //Btn Link
     $wp_customize->add_setting(
-        'sec_hero_button_link',
+        'set_hero_button_link',
         array(
             'type' => 'theme_mod',
-            'default' => 'Por favor, insira uma url válida',
+            'default' => '#',
             'sanitize_callback' => 'esc_url_raw'
         )
     );
 
     $wp_customize->add_control(
-        'sec_hero_button_link',
+        'set_hero_button_link',
         array(
             'label' => 'Link',
-            'description' => 'Link for hero',
+            'description' => 'Ler Mais',
             'section' => 'sec_hero',
             'type' => 'url'
         )
@@ -91,7 +91,7 @@ function caju_customizer( $wp_customize ) {
 
     //Height
     $wp_customize->add_setting(
-        'sec_hero_height',
+        'set_hero_height',
         array(
             'type' => 'theme_mod',
             'default' => 500,
@@ -100,10 +100,10 @@ function caju_customizer( $wp_customize ) {
     );
 
     $wp_customize->add_control(
-        'sec_hero_height',
+        'set_hero_height',
         array(
             'label' => 'Height',
-            'description' =>  'Height for img',
+            'description' =>  'Altura para o hero',
             'section' => 'sec_hero',
             'type' => 'number'
         )
@@ -111,19 +111,19 @@ function caju_customizer( $wp_customize ) {
 
     // Hero Background
     $wp_customize->add_setting(
-        'sec_hero_background',
+        'set_hero_background',
         array(
             'type' => 'theme_mod',
             'sanitize_callback' => 'absint'
         )
     );
 
-    $wp_customize->add_control( new WP_Customize_Media_Control($wp_customize, 'sec_hero_background', array(
+    $wp_customize->add_control( new WP_Customize_Media_Control($wp_customize, 'set_hero_background', array(
         'label' => 'Background',
         'section' => 'sec_hero',   
         'mime_type' => 'image'
     ) ));
-}
+};
 
 
 add_action('customize_register', 'caju_customizer');
