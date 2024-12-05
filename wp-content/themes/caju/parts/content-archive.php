@@ -1,22 +1,23 @@
-<article class="archive-loop col-12">
-    <header>
+<article>
+    
         <h3>
             <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
                 <?php the_title(); ?>
             </a>
         </h3>
-        <div class="archive-img">
+
+        <?php if( has_post_thumbnail() ): ?> 
             <a href="<?php the_permalink(); ?>">
                 <?php the_post_thumbnail( 'medium'); ?>
             </a>
+            <?php endif; ?>
+            
+        <p> Postado em <?php echo get_the_date(); ?></p>
+        <?php if( has_category()): ?>
+            <p>Categorias:<?php the_category( '' ); ?></p>
+        <?php endif; ?>
+            
+        <div class="meta-info">
+            <?php echo the_excerpt(); ?>
         </div>
-        <div class="archive-info">
-            <p> Postado em <?php echo get_the_date(); ?>  por <?php echo get_the_author_posts_link(); ?></p>
-            <p> Categorias: <?php the_category( '' ); ?></p>
-            <p> Tags: <?php the_tags( '', ', '); ?></p>
-        </div>
-    </header>
-    <div class="archive-content">
-        <?php the_excerpt(); ?>
-    </div>
 </article>
