@@ -1,25 +1,23 @@
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <header>
-        <h2>
-            <a href="<?php the_permalink(); ?>">
+<article>
+    
+        <h3>
+            <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
                 <?php the_title(); ?>
             </a>
-        </h2>
-        <div class="img-destaque">
-            <?php the_post_thumbnail( 'medium'); ?>
+        </h3>
 
-        </div>
-        <?php if( 'post' == get_post_type()): ?>
-            <div class="meta-info">
-                <p> Postado em <?php echo get_the_date(); ?>  por <?php echo get_the_author_posts_link(); ?></p>
-                <p> Categories: <?php the_category( '' ); ?></p>
-                <p> Tags: <?php the_tags( '', ', '); ?></p>
-            </div>
+        <?php if( has_post_thumbnail() ): ?> 
+            <a href="<?php the_permalink(); ?>">
+                <?php the_post_thumbnail( 'medium'); ?>
+            </a>
+            <?php endif; ?>
+            
+        <p> Postado em <?php echo get_the_date(); ?></p>
+        <?php if( has_category()): ?>
+            <p>Categorias:<?php the_category( '' ); ?></p>
         <?php endif; ?>
-    </header>
-
-    <div class="content">
-        <?php the_excerpt(); ?>
-
-    </div>
+            
+        <div class="meta-info">
+            <?php echo the_excerpt(); ?>
+        </div>
 </article>
