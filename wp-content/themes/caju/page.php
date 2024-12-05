@@ -16,11 +16,11 @@ get_header();
     </div>
     <section class="content-page">
         <div class="container">
-            <?php while ( have_posts() ) : the_post(); 
-            
-                get_template_part('parts/content', 'page');
-            
-            endwhile;?>
+                <?php while ( have_posts() ) : the_post(); 
+                
+                    get_template_part('parts/content', 'page');
+                
+                endwhile;?>
         </div>
     </section>
 </main>

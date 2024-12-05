@@ -1,6 +1,6 @@
 <?php
 /*
-Template name: Recipes Template
+Template name: Training Template
 
 */
 
@@ -9,18 +9,10 @@ get_header();
 ?>
 
 <main class="main">
-<?php if(has_post_thumbnail()):?>
-
-    <div class="container-fluid page-template" style="background-image:url('<?php  the_post_thumbnail_url()?>')">
-            <div class="overflow">
-
-            </div>
-        </div>
-    <?php endif; ?><div class="container-fluid banner-header">
-
-
-
-</div>
+  
+    <div class="container-fluid banner-header">
+        <img src="<?php  header_image()?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="">
+    </div>
 
     <section class="recipes-template">
         <div class="container">
@@ -32,7 +24,7 @@ get_header();
                             $args = array(
                                 'post_type' => 'post',
                                 'posts_per_page' => 10,
-                                'category__in' => array(8,9),
+                                'category__in' => array(6),
                                 'category__not_in' => array(1)
                             );
 
