@@ -127,121 +127,180 @@ function caju_customizer( $wp_customize ) {
 
 
     // 3. Blog
-$wp_customize->add_section( 
-    'sec_blog', 
-    array(
-        'title' =>  'Blog Section', 'caju'
-) );
+    $wp_customize->add_section( 
+        'sec_blog', 
+        array(
+            'title' =>  'Blog Section', 'caju'
+    ) );
 
-        // Posts por página - Blog
-        $wp_customize->add_setting( 
-            'set_per_page', 
-            array(
-                'type' => 'theme_mod',
-                'sanitize_callback' => 'absint'
-        ) );
+    // Posts por página - Blog
+    $wp_customize->add_setting( 
+        'set_per_page', 
+        array(
+            'type' => 'theme_mod',
+            'sanitize_callback' => 'absint'
+    ) );
 
-        $wp_customize->add_control( 
-            'set_per_page', 
-            array(
-                'label' =>  'Posts per page', 'caju',
-                'description' =>  'Quantos itens exibir na lista de postagens?', 'caju',			
-                'section' => 'sec_blog',
-                'type' => 'number'
-        ) );
+    $wp_customize->add_control( 
+        'set_per_page', 
+        array(
+            'label' =>  'Posts per page', 'caju',
+            'description' =>  'Quantos itens exibir na lista de postagens?', 'caju',			
+            'section' => 'sec_blog',
+            'type' => 'number'
+    ) );
 
-        // Post categories to include
-        $wp_customize->add_setting( 
-            'set_category_include', 
-            array(
-                'type' => 'theme_mod',
-                'sanitize_callback' => 'sanitize_text_field'
-        ) );
+    // Post categories to include
+    $wp_customize->add_setting( 
+        'set_category_include', 
+        array(
+            'type' => 'theme_mod',
+            'sanitize_callback' => 'sanitize_text_field'
+    ) );
 
-        $wp_customize->add_control( 
-            'set_category_include', 
-            array(
-                'label' =>  'Post categories to include', 'caju',
-                'description' =>  'Valores separados por vírgula ou ID de categoria única', 'caju',
-                'section' => 'sec_blog',
-                'type' => 'text'
-        ) );	
+    $wp_customize->add_control( 
+        'set_category_include', 
+        array(
+            'label' =>  'Post categories to include', 'caju',
+            'description' =>  'Valores separados por vírgula ou ID de categoria única', 'caju',
+            'section' => 'sec_blog',
+            'type' => 'text'
+    ) );	
 
-        // Post categories to exclude
-        $wp_customize->add_setting( 
-            'set_category_exclude', 
-            array(
-                'type' => 'theme_mod',
-                'sanitize_callback' => 'sanitize_text_field'
-        ) );
+    // Post categories to exclude
+    $wp_customize->add_setting( 
+        'set_category_exclude', 
+        array(
+            'type' => 'theme_mod',
+            'sanitize_callback' => 'sanitize_text_field'
+    ) );
 
-        $wp_customize->add_control( 
-            'set_category_exclude', 
-            array(
-                'label' =>  'Post categories to exclude', 'caju',
-                'description' =>  'Valores separados por vírgula ou ID de categoria única', 'caju',			
-                'section' => 'sec_blog',
-                'type' => 'text'
-        ) );     
-        
-        
-// . Recipes
-$wp_customize->add_section( 
-    'sec_recipes', 
-    array(
-        'title' =>  'Recipes Section', 'caju'
-) );
+    $wp_customize->add_control( 
+        'set_category_exclude', 
+        array(
+            'label' =>  'Post categories to exclude', 'caju',
+            'description' =>  'Valores separados por vírgula ou ID de categoria única', 'caju',			
+            'section' => 'sec_blog',
+            'type' => 'text'
+    ) );     
+            
+            
+    // . Recipes
+    $wp_customize->add_section( 
+        'sec_recipes', 
+        array(
+            'title' =>  'Recipes Section', 'caju'
+    ) );
 
-// Posts por página - receita
-$wp_customize->add_setting( 
-    'set_per_page_recipes', 
-    array(
-        'type' => 'theme_mod',
-        'sanitize_callback' => 'absint'
-) );
+    // Posts por página - receita
+    $wp_customize->add_setting( 
+        'set_per_page_recipes', 
+        array(
+            'type' => 'theme_mod',
+            'sanitize_callback' => 'absint'
+    ) );
 
-$wp_customize->add_control( 
-    'set_per_page_recipes', 
-    array(
-        'label' =>  'Posts per page', 'caju',
-        'description' =>  'Quantos itens exibir na lista de postagens?', 'caju',			
-        'section' => 'sec_recipes',
-        'type' => 'number'
-) );
+    $wp_customize->add_control( 
+        'set_per_page_recipes', 
+        array(
+            'label' =>  'Posts per page', 'caju',
+            'description' =>  'Quantos itens exibir na lista de postagens?', 'caju',			
+            'section' => 'sec_recipes',
+            'type' => 'number'
+    ) );
 
-// Post categories to include
-$wp_customize->add_setting( 
-    'set_category_include_recipes', 
-    array(
-        'type' => 'theme_mod',
-        'sanitize_callback' => 'sanitize_text_field'
-) );
+    // Post categories to include
+    $wp_customize->add_setting( 
+        'set_category_include_recipes', 
+        array(
+            'type' => 'theme_mod',
+            'sanitize_callback' => 'sanitize_text_field'
+    ) );
 
-$wp_customize->add_control( 
-    'set_category_include_recipes', 
-    array(
-        'label' =>  'Post categories to include', 'caju',
-        'description' =>  'Valores separados por vírgula ou ID de categoria única', 'caju',
-        'section' => 'sec_recipes',
-        'type' => 'text'
-) );	
+    $wp_customize->add_control( 
+        'set_category_include_recipes', 
+        array(
+            'label' =>  'Post categories to include', 'caju',
+            'description' =>  'Valores separados por vírgula ou ID de categoria única', 'caju',
+            'section' => 'sec_recipes',
+            'type' => 'text'
+    ) );	
 
-// Post categories to exclude
-$wp_customize->add_setting( 
-    'set_category_exclude_recipes', 
-    array(
-        'type' => 'theme_mod',
-        'sanitize_callback' => 'sanitize_text_field'
-) );
+    // Post categories to exclude
+    $wp_customize->add_setting( 
+        'set_category_exclude_recipes', 
+        array(
+            'type' => 'theme_mod',
+            'sanitize_callback' => 'sanitize_text_field'
+    ) );
 
-$wp_customize->add_control( 
-    'set_category_exclude_recipes', 
-    array(
-        'label' =>  'Post categories to exclude', 'caju',
-        'description' =>  'Valores separados por vírgula ou ID de categoria única', 'caju',			
-        'section' => 'sec_recipes',
-        'type' => 'text'
-) );     
+    $wp_customize->add_control( 
+        'set_category_exclude_recipes', 
+        array(
+            'label' =>  'Post categories to exclude', 'caju',
+            'description' =>  'Valores separados por vírgula ou ID de categoria única', 'caju',			
+            'section' => 'sec_recipes',
+            'type' => 'text'
+    ) );     
+
+
+    // Training
+    $wp_customize->add_section( 
+        'sec_training', 
+        array(
+            'title' =>  'Training Section', 'caju'
+    ) );
+
+    // Posts por página - receita
+    $wp_customize->add_setting( 
+        'set_per_page_training', 
+        array(
+            'type' => 'theme_mod',
+            'sanitize_callback' => 'absint'
+    ) );
+
+    $wp_customize->add_control( 
+        'set_per_page_training', 
+        array(
+            'label' =>  'Posts per page', 'caju',
+            'description' =>  'Quantos itens exibir na lista de postagens?', 'caju',			
+            'section' => 'sec_training',
+            'type' => 'number'
+    ) );
+
+    // Post categories to include
+    $wp_customize->add_setting( 
+        'set_category_include_training', 
+        array(
+            'type' => 'theme_mod',
+            'sanitize_callback' => 'sanitize_text_field'
+    ) );
+
+    $wp_customize->add_control( 
+        'set_category_include_training', 
+        array(
+            'label' =>  'Post categories to include', 'caju',
+            'description' =>  'Valores separados por vírgula ou ID de categoria única', 'caju',
+            'section' => 'sec_training',
+            'type' => 'text'
+    ) );	
+
+    // Post categories to exclude
+    $wp_customize->add_setting( 
+        'set_category_exclude_training', 
+        array(
+            'type' => 'theme_mod',
+            'sanitize_callback' => 'sanitize_text_field'
+    ) );
+
+    $wp_customize->add_control( 
+        'set_category_exclude_training', 
+        array(
+            'label' =>  'Post categories to exclude', 'caju',
+            'description' =>  'Valores separados por vírgula ou ID de categoria única', 'caju',			
+            'section' => 'sec_training',
+            'type' => 'text'
+    ) ); 
 };
 
 

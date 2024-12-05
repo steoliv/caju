@@ -16,7 +16,7 @@ get_header();
 
             </div>
         </div>
-    <?php endif; ?><div class="container-fluid banner-header">
+    <?php endif; ?>
 
 
 
@@ -25,7 +25,6 @@ get_header();
     <section class="recipes-template">
         <div class="container">
             <div class="row">
-                <?php while ( have_posts() ) : the_post(); ?>
                     <section class="content-page">
                         <div class="container recipes">
                         <?php
@@ -54,11 +53,7 @@ get_header();
                     </section>
 
 
-                    </article>
-                <?php endwhile; ?>
-                   
-
-                    
+                    </article>                    
             </div>
         </div>
     </section>
