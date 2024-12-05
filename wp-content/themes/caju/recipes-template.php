@@ -40,7 +40,7 @@ get_header();
 
                             while ( $postlist->have_posts() ) : $postlist->the_post(); 
                             
-                                get_template_part('parts/content', 'page');
+                                get_template_part('parts/content', 'recipes-template');
                             
                             endwhile;
                             wp_reset_postdata();
@@ -48,7 +48,11 @@ get_header();
                         </div>
                     </section>
 
+
+                    </article>
                 <?php endwhile; ?>
+                   
+
                     
             </div>
         </div>
