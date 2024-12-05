@@ -182,7 +182,66 @@ $wp_customize->add_section(
                 'description' =>  'Valores separados por vírgula ou ID de categoria única', 'caju',			
                 'section' => 'sec_blog',
                 'type' => 'text'
-        ) );        
+        ) );     
+        
+        
+// . Recipes
+$wp_customize->add_section( 
+    'sec_recipes', 
+    array(
+        'title' =>  'Recipes Section', 'caju'
+) );
+
+// Posts por página - receita
+$wp_customize->add_setting( 
+    'set_per_page_recipes', 
+    array(
+        'type' => 'theme_mod',
+        'sanitize_callback' => 'absint'
+) );
+
+$wp_customize->add_control( 
+    'set_per_page_recipes', 
+    array(
+        'label' =>  'Posts per page', 'caju',
+        'description' =>  'Quantos itens exibir na lista de postagens?', 'caju',			
+        'section' => 'sec_recipes',
+        'type' => 'number'
+) );
+
+// Post categories to include
+$wp_customize->add_setting( 
+    'set_category_include_recipes', 
+    array(
+        'type' => 'theme_mod',
+        'sanitize_callback' => 'sanitize_text_field'
+) );
+
+$wp_customize->add_control( 
+    'set_category_include_recipes', 
+    array(
+        'label' =>  'Post categories to include', 'caju',
+        'description' =>  'Valores separados por vírgula ou ID de categoria única', 'caju',
+        'section' => 'sec_recipes',
+        'type' => 'text'
+) );	
+
+// Post categories to exclude
+$wp_customize->add_setting( 
+    'set_category_exclude_recipes', 
+    array(
+        'type' => 'theme_mod',
+        'sanitize_callback' => 'sanitize_text_field'
+) );
+
+$wp_customize->add_control( 
+    'set_category_exclude_recipes', 
+    array(
+        'label' =>  'Post categories to exclude', 'caju',
+        'description' =>  'Valores separados por vírgula ou ID de categoria única', 'caju',			
+        'section' => 'sec_recipes',
+        'type' => 'text'
+) );     
 };
 
 
