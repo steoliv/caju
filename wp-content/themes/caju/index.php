@@ -4,18 +4,19 @@ get_header();
 
 ?>
 
-<div class="container-fluid banner-header">
-    <img src="<?php  header_image()?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="">
-</div>
-
-
-<div class="container-fluid">
+<div class="container-fluid page-template">
+        <?php get_template_part('parts/hero'); ?>
+        
+    </div>
 
     <section class="blog-home">
         <div class="container">
+
+        
             <div class="row">
                 <div class="col-md-8 col-12 blog-list">
                     <div class="container">
+                    <div class="blog-items">
                         <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); 
 
                             get_template_part('parts/content');
@@ -27,7 +28,7 @@ get_header();
                                 <?php echo paginate_links(); ?>
                             </div>
                         </div>
-                        
+                    </div>
                         <?php else : ?>
                                 <article>
                                     <p>Sorry, no posts were found!</p>
@@ -36,7 +37,7 @@ get_header();
                     </div>
                 </div>
 
-                <div class="sidebar-blog col-md-4 col-12">
+                <div class="sidebar-blog col-md-3 col-12">
                     <?php echo get_sidebar(); ?>
                 </div>
             </div>
@@ -45,6 +46,6 @@ get_header();
 </div>
         
         <?php
-wp_footer();
+get_footer();
 
 ?>
